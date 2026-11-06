@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { UiComponentsDemo } from "@/components/ui-components-demo";
 import {
   Activity,
   AudioLines,
@@ -190,6 +191,7 @@ export default function MobilePreviewPage() {
   const screenComponents = { LIVE: <LiveScreen onAsk={() => setActiveScreen("ASK")} />, ASK: <AskScreen />, POLICY: <PolicyScreen />, DEVICES: <DevicesScreen /> };
 
   return (
+    <>
     <section className="mobile-preview-page">
       <div className="mobile-preview-copy"><span className="mobile-preview-kicker"><span /> THE PERCEPTA APP</span><h1>Awareness that moves with you.</h1><p>See how Percepta turns the world around you into useful, timely cues. Explore the experience on your phone.</p><div className="mobile-preview-proof"><span><Check size={14} /> Designed for everyday devices</span><span><Check size={14} /> Your cues, your control</span></div></div>
       <div className="mobile-preview-demo">
@@ -207,5 +209,7 @@ export default function MobilePreviewPage() {
         </div>
       </div>
     </section>
+    <UiComponentsDemo />
+    </>
   );
 }
