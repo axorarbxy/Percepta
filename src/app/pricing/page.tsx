@@ -31,7 +31,7 @@ export default function PricingPage() {
       <div className="pricing-container">
         <header className="pricing-header">
           <p className="label pricing-kicker">Plans for every perspective</p>
-          <h1 className="h2" id="pricing-title">Simple pricing. Serious perception.</h1>
+          <h2 className="h2" id="pricing-title">Simple pricing. Serious perception.</h2>
           <p className="body">Start with the essentials, then choose the awareness that fits your life or team.</p>
         </header>
 
