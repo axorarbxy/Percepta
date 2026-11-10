@@ -14,25 +14,25 @@ export function Hero() {
     <section className="launch-hero" id="product" aria-labelledby="hero-title">
       <div className="launch-hero__grid">
         <div className="launch-hero__content">
-          <motion.p className="launch-hero__eyebrow label" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}>
+          <motion.p className="launch-hero__eyebrow label" initial={false} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}>
             <span className="launch-hero__eyebrow-mark" aria-hidden="true" />SOFTWARE-DEFINED PERCEPTION
           </motion.p>
 
           <h1 className="h1 launch-hero__title" id="hero-title" aria-label="Your sixth sense, software-defined.">
-            <motion.span className="launch-hero__line" variants={lineVariants} initial="hidden" animate="visible" transition={{ delay: 0.1 }}>Your sixth sense,</motion.span>
-            <motion.span className="launch-hero__line launch-hero__line--accent" variants={lineVariants} initial="hidden" animate="visible" transition={{ delay: 0.2 }}>software-defined.</motion.span>
+            <motion.span className="launch-hero__line" initial={false} animate={{ opacity: 1, y: 0 }}>Your sixth sense,</motion.span>
+            <motion.span className="launch-hero__line launch-hero__line--accent" initial={false} animate={{ opacity: 1, y: 0 }}>software-defined.</motion.span>
           </h1>
 
-          <motion.p className="launch-hero__subhead body" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.28, duration: 0.5 }}>
+          <motion.p className="launch-hero__subhead body" initial={false} animate={{ opacity: 1, y: 0 }}>
             Percepta turns your phone, earbuds, and smartwatch into a real-time awareness layer — no hardware, no surgery.
           </motion.p>
 
-          <motion.div className="launch-hero__actions" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3, duration: 0.45 }}>
+          <motion.div className="launch-hero__actions" initial={false} animate={{ opacity: 1, y: 0 }}>
             <Link className="button button--primary" href="#early-access">Get Early Access <ArrowUpRight size={17} aria-hidden="true" /></Link>
             <Link className="button button--ghost launch-hero__demo" href="#how-it-works"><Play size={15} fill="currentColor" aria-hidden="true" />Watch 90s Demo</Link>
           </motion.div>
 
-          <motion.div className="launch-hero__trust" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.65, duration: 0.5 }} aria-label="Percepta benefits">
+          <motion.div className="launch-hero__trust" initial={false} animate={{ opacity: 1 }} aria-label="Percepta benefits">
             <span>300M+ sensory needs served</span><i aria-hidden="true" /><span>No custom hardware</span><i aria-hidden="true" /><span>Ships in weeks</span>
           </motion.div>
         </div>
