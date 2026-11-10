@@ -3,6 +3,8 @@ import { cors } from 'hono/cors';
 import { validateEnv, type Env } from './lib/env.js';
 import { errorHandler } from './middleware/error-handler.js';
 import { logger } from './middleware/logger.js';
+import { authRoute } from './routes/auth.js';
+import { cuesRoute } from './routes/cues.js';
 import { healthRoute } from './routes/health.js';
 import type { AppEnv } from './types.js';
 
@@ -74,7 +76,10 @@ app.onError((c) => errorHandler(c));
 
 // 6. Chained route definitions for RPC AppType inference
 // Base path /api/v1
-const routes = app.route('/api/v1', healthRoute);
+const routes = app
+  .route('/api/v1', healthRoute)
+  .route('/api/v1/auth', authRoute)
+  .route('/api/v1/cues', cuesRoute);
 
 // Export RPC AppType for frontend type-safe client consumption
 export type AppType = typeof routes;

@@ -12,7 +12,11 @@
     "build": "wrangler deploy --dry-run --outdir dist",
     "deploy": "wrangler deploy",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --env-file=.dev.vars scripts/test-endpoints.ts"
+    "test": "tsx --env-file=.dev.vars scripts/test-endpoints.ts",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "tsx --env-file=.dev.vars src/db/migrate.ts",
+    "db:push": "drizzle-kit push",
+    "db:seed": "tsx --env-file=.dev.vars src/db/seed.ts"
   },
   "dependencies": {
     "@hono/node-server": "^2.1.6",
