@@ -6,6 +6,7 @@ import { logger } from './middleware/logger.js';
 import { authRoute } from './routes/auth.js';
 import { cuesRoute } from './routes/cues.js';
 import { healthRoute } from './routes/health.js';
+import { profileRoute } from './routes/profile.js';
 import type { AppEnv } from './types.js';
 
 // Attempt initial cold-start environment validation if process.env is populated
@@ -79,7 +80,8 @@ app.onError((c) => errorHandler(c));
 const routes = app
   .route('/api/v1', healthRoute)
   .route('/api/v1/auth', authRoute)
-  .route('/api/v1/cues', cuesRoute);
+  .route('/api/v1/cues', cuesRoute)
+  .route('/api/v1/profile', profileRoute);
 
 // Export RPC AppType for frontend type-safe client consumption
 export type AppType = typeof routes;

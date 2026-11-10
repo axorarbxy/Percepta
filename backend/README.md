@@ -74,6 +74,13 @@ Serves locally via `@hono/node-server` at `http://localhost:8787`.
 - `DELETE /api/v1/cues/:id` → permanently delete one of the authenticated user's cues. Cue deletion is hard deletion for this MVP; the endpoint does not retain a soft-deleted history record.
 
 All cue endpoints require a valid JWT. Cue reads, updates, and deletes are scoped to the JWT subject; inaccessible cue IDs return `403`.
+- `GET /api/v1/profile` → get the authenticated user's sensory profile and dominant channel.
+- `PATCH /api/v1/profile` → update profile settings; policy weights must sum to `1.0` within a `0.01` tolerance.
+- `POST /api/v1/profile/apply-preset` → apply a read-only context preset to the user's profile.
+- `POST /api/v1/profile/reset-policy` → reset the learned policy weights and sensitivity.
+- `GET /api/v1/profile/presets` → list the seeded context presets.
+
+All profile endpoints require a valid JWT and operate on the profile belonging to its subject. Profiles are created during registration and lazily initialized if missing; presets can only be changed through the seed script.
 
 ## Frontend RPC Integration
 In your frontend:
